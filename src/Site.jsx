@@ -157,7 +157,7 @@ export function Landing() {
               <br />
               начинается
               <br />
-              <em>здесь ↗</em>
+              <em>здесь <ArrowUpRight aria-hidden="true" focusable="false" style={{width:'1em',height:'1em',display:'inline-block',verticalAlign:'-.125em'}} /></em>
             </span>
           </div>
           <div className="hero-footnotes">
@@ -199,7 +199,7 @@ export function Landing() {
               >
                 <div className="service-top">
                   <span className="service-number">0{i + 1}</span>
-                  <span className="service-symbol">↗</span>
+                  <span className="service-symbol"><ArrowUpRight aria-hidden="true" focusable="false" style={{width:'1em',height:'1em',display:'inline-block',verticalAlign:'-.125em'}} /></span>
                 </div>
                 <span className="service-tag">{service.tag}</span>
                 <h3>{service.name}</h3>
