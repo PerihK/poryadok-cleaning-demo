@@ -1,0 +1,263 @@
+/* The seven columns must shrink below WebKit's intrinsic button size. */
+.calendar,
+.date-time-grid,
+.calendar-heading strong {
+  min-width: 0;
+}
+.calendar {
+  width: 100%;
+  max-width: 100%;
+}
+.calendar-heading {
+  gap: 8px;
+}
+.calendar-heading > div {
+  flex-shrink: 0;
+}
+.calendar-days {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  width: 100%;
+  min-width: 0;
+}
+.calendar-days > * {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 40px;
+  min-height: 0;
+  aspect-ratio: auto;
+  padding: 0;
+  margin: 0;
+}
+.calendar-days button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.calendar-days .weekday {
+  height: 24px;
+  min-height: 0;
+}
+.address-combobox {
+  position: relative;
+}
+.address-input-wrap {
+  position: relative;
+}
+.address-input-wrap > svg:first-child {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  transform: translateY(-50%);
+  color: #8da079;
+  pointer-events: none;
+}
+.field .address-input-wrap input {
+  padding-left: 39px;
+  padding-right: 36px;
+  height: 48px;
+}
+.address-spinner {
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  animation: spin 1s linear infinite;
+  color: #809b66;
+}
+.address-dropdown {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  right: 0;
+  z-index: 12;
+  background: #fffef9;
+  border: 1px solid #dce6d2;
+  border-radius: 9px;
+  box-shadow: 0 8px 24px #2948221a;
+  max-height: 280px;
+  max-height: min(280px, 42dvh);
+  overflow-y: auto;
+}
+.address-dropdown [role="option"] {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  gap: 10px;
+  padding: 13px;
+  width: 100%;
+  min-height: 56px;
+  border-bottom: 1px solid #edf1e7;
+}
+.address-dropdown [role="option"]:hover,
+.address-dropdown [role="option"].active {
+  background: #eef5e4;
+}
+.address-dropdown [role="option"] > svg {
+  color: #9bb587;
+  margin-top: 2px;
+}
+.address-dropdown strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #48683a;
+  overflow-wrap: anywhere;
+}
+.address-dropdown small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #7d936d;
+  margin-top: 3px;
+}
+.address-message {
+  font-size: 11px;
+  line-height: 1.7;
+  padding: 14px;
+  color: #788e67;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.address-attribution {
+  display: block;
+  text-align: right;
+  padding: 8px 12px;
+  font-size: 9px;
+  color: #a0ad94;
+}
+.detail-modal[open] {
+  display: flex;
+  flex-direction: column;
+}
+.detail-header {
+  flex-shrink: 0;
+}
+.detail-scroll {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+}
+.detail-actions {
+  flex-shrink: 0;
+  height: auto;
+  min-height: 83px;
+  flex-wrap: wrap;
+}
+.delete-button,
+.cancel-delete {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 13px;
+  min-height: 42px;
+  border: 1px solid #e7c7b8;
+  color: #a06650;
+  background: #fff8f3;
+  border-radius: 7px;
+  font-size: 11px;
+}
+.delete-button:hover {
+  background: #f9ece2;
+}
+.detail-actions > .delete-button {
+  margin-right: auto;
+}
+.cancel-delete {
+  background: #f7faf1;
+  border-color: #e0e9d4;
+  color: #81946b;
+}
+.delete-confirm {
+  width: 100%;
+}
+.delete-confirm p {
+  font-size: 12px;
+  color: #855f4e;
+  line-height: 1.6;
+}
+.delete-confirm > span {
+  display: block;
+  font-size: 10px;
+  color: #9b8c7f;
+  margin-top: 4px;
+  line-height: 1.7;
+}
+.delete-confirm > div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+.trash-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px;
+  margin-bottom: 22px;
+  background: #f4f0e9;
+  border: 1px solid #e8e1d6;
+  border-radius: 7px;
+  color: #95856e;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.undo-delete {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 9px;
+  min-height: 36px;
+  background: #ffffff14;
+  border-radius: 5px;
+  color: #f1f4df;
+  font-size: 10px;
+}
+@media (max-width: 700px) {
+  .calendar-days > * {
+    height: 42px;
+    min-height: 0;
+  }
+  .calendar-days .weekday {
+    height: 24px;
+  }
+  .address-dropdown strong {
+    font-size: 13px;
+  }
+  .address-dropdown small,
+  .address-message {
+    font-size: 11px;
+  }
+  .detail-actions {
+    min-height: 89px;
+  }
+  .detail-actions > .button {
+    font-size: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 7px;
+  }
+  .delete-button,
+  .cancel-delete {
+    font-size: 10px;
+    padding: 10px;
+  }
+  .delete-confirm p {
+    font-size: 12px;
+  }
+  .toast {
+    flex-wrap: wrap;
+  }
+  .undo-delete {
+    margin-left: auto;
+  }
+}
+@media (max-width: 370px) {
+  .calendar-days > * {
+    height: 38px;
+  }
+  .calendar-days .weekday {
+    height: 22px;
+  }
+}
